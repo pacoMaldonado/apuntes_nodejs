@@ -1,0 +1,15 @@
+ El volumen de la unidad C no tiene etiqueta.
+ El n�mero de serie del volumen es: A82B-0E25
+
+ Directorio de C:\Users\Javier\proyectos\GitHub\apuntes_nodejs
+
+31/12/2020  13:15    <DIR>          .
+31/12/2020  13:15    <DIR>          ..
+30/12/2020  13:05             1,714 .gitignore
+31/12/2020  12:09    <DIR>          conceptos
+30/12/2020  17:31    <DIR>          image
+30/12/2020  13:05            11,558 LICENSE
+31/12/2020  15:39    <DIR>          modulos
+31/12/2020  15:38             6,675 README.md
+               3 archivos         19,947 bytes
+               5 dirs  175,115,329,536 bytes libres

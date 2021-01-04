@@ -112,3 +112,64 @@ Utilizamos resolve para retornar el valor deseado cuando una función se ejecute
 
 Para evitar que todo se vea asíncrono, y que la sintáxis sea más legible las operaciones secuenciales como hacer un archivo que se procese, subirlo para tener una URL y de ahí mandarla a una base de datos.
 Async y Await nos permite definir una función de forma explícita como asíncrona y esperar a que la función termine. No estará bloqueando el hilo principal, pues estará esperando a que se resuelva con el event loop
+
+## Global
+
+En Node tenemos el objecto **global** que contiene los metodos y propiedades basicas que usamos Node; _ej (setTimeOut)_.
+
+> **global** es equivalente de **this** en el navegador
+
+En node **this** es un alias de **global**.
+
+```js
+this === global; // true
+```
+
+Algunos metodos que se incluyen en el **global** objecto son:
+
+- **setTimeOut**: se encarga de llamar a otra función despues de un periodo de tiempo.
+- **setInterval**: llama a otra función cada intervalo de tiempo.
+- **setImmediate**: Equivalente a setTimeOut pero con tiempo 0.
+- **clearTimeOut**: detiene un setTimeOut.
+- **clearInterval**: detiene un setInterval.
+
+## Consele
+
+Con console podemos imprimir todo tipo de valores por
+nuestra terminal.
+
+console.log: recibe cualquier tipo y lo muestra en el consola.
+console.info: es equivalente a log pero es usado para informar.
+console.error: es equivalente a log pero es usado para errores.
+console.warn: es equivalente a log pero es usado para warning.
+console.table: muestra una tabla a partir de un objeto.
+console.count: inicia un contador autoincremental.
+console.countReset: reinicia el contador a 0.
+console.time: inicia un cronometro en ms.
+console.timeEnd: Finaliza el cronometro.
+console.group: permite agrupar errores mediante identación.
+console.groupEnd: finaliza la agrupación.
+console.clear: Limpia la consola.
+
+## Child Process
+
+En node podemos crear procesos hijos que ejecuten cualquier accion de nuestro sistema operativo, como si nos encontraramos en la linea de comandos.
+
+Podemos llamar a exec para ejecuciones sencillas:
+
+```js
+const { exec } = require("child_process");
+exec("ls", (e, stdout) => {
+  e ? console.log(e) : console.log(stdout);
+});
+```
+
+Podemos llamar a spawn para obtener el proceso: La ventaja de este enfoque es que obtienes mayor control del proceso, y del estado en el que se encuenta
+
+```js
+const { spawn } = require("child_process");
+const myprocess = spawn("ls");
+
+process.stdout.on("data", (data) => console.log(data.toString()));
+process.on("exit", () => console.log("process end"));
+```
