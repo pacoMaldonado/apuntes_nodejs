@@ -24,3 +24,7 @@ Es un entorno de ejecución creado en 2009 y es **orientado a servidores**.
 - Centrado en módulos.
 - Orientado a eventos.
 
+## Liga de notas de miembros de Platzi 
+
+
+[Notas de miembros de platzi](https://github.com/JasanHdz/backendnodejs/tree/master/notes)
